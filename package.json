@@ -17,7 +17,7 @@
         {
             "displayName": "Demo",
             "description": "Content that shows how to use the system.",
-            "path": "Samples~/Examples"
+            "path": "~Samples/Examples"
         }
     ]
 }

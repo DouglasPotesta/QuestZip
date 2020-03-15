@@ -1,0 +1,9 @@
+{
+    "name": "Progression_Editor",
+    "references": [
+        "Progression_Runtime",
+        "AssetCallbacks_Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": []
+}

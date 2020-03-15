@@ -1,0 +1,8 @@
+{
+    "name": "AssetCallbacks_Editor",
+    "references": [
+        "AssetCallbacks_Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": []
+}
