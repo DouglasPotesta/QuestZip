@@ -95,7 +95,7 @@ namespace Progression
                 if (progressionPoints[i] == null)
                     continue;
                 progressionPoints[i].saveSlot = saveSlot;
-                progressionPoints[i].Load();
+                progressionPoints[i].Save();
             }
             lastCompleted = IndexOfNextProgressionPointToComplete - 1;
             base.Save();

@@ -39,7 +39,6 @@ namespace ProgressionEditor
             if (questEditor != null)
                 DestroyImmediate(questEditor);
 
-            Object[] obj = AssetDatabase.LoadAllAssetsAtPath(AssetPath);
             Object main = AssetDatabase.LoadMainAssetAtPath(AssetPath);
             QuestManagerAsset questManager = (QuestManagerAsset)main;
             if (questManager == null)
@@ -190,7 +189,6 @@ namespace ProgressionEditor
 
         public float GetQuestElementHeight(int index)
         {
-            SerializedProperty serializedProperty = questsProperty.GetArrayElementAtIndex(index);
             float height = EditorGUIUtility.singleLineHeight * 2;
             return height;
         }
@@ -227,7 +225,6 @@ namespace ProgressionEditor
 
         public void OnDisable()
         {
-            Object[] obj = AssetDatabase.LoadAllAssetsAtPath(AssetPath);
             QuestAsset quest = (QuestAsset)serializedObject.targetObject;
             if (quest == null)
                 return;
@@ -251,7 +248,7 @@ namespace ProgressionEditor
                 progressionPointsReorderableList.onAddCallback += OnProgressionPointAddElement;
                 progressionPointsReorderableList.onRemoveCallback += OnProgressionPointRemoveElement;
                 progressionPointsReorderableList.onSelectCallback += OnProgressionPointSelectElement;
-                progressionPointNames = new HashSet<string>(((QuestAsset)target)?.GetProgressionPoints().Select(x => x.name));
+                progressionPointNames = new HashSet<string>(((QuestAsset)target)? ((QuestAsset)target).GetProgressionPoints().Select(x => x.name):new string[0]);
             }
         }
 
@@ -294,7 +291,7 @@ namespace ProgressionEditor
             ReorderableList.defaultBehaviours.DoAddButton(reorderableList);
             serializedObject.ApplyModifiedProperties();
             ProgressionPointAsset p = CreateAsset<ProgressionPointAsset>();
-            p.name = GetUniqueProgressionPointName(nameof(ProgressionPointAsset));
+            p.name = GetUniqueProgressionPointName("ProgressionPointAsset");
             progressionPointNames.Add(p.name);
             reorderableList.serializedProperty.GetArrayElementAtIndex(reorderableList.serializedProperty.arraySize - 1).objectReferenceValue = p;
             serializedObject.ApplyModifiedProperties();
@@ -406,7 +403,7 @@ namespace ProgressionEditor
 
         public float GetProgressionPointElementHeight(int index)
         {
-            SerializedProperty serializedProperty = progressionPointsProperty.GetArrayElementAtIndex(index);
+
             float height = EditorGUIUtility.singleLineHeight * 2;
             return height;
         }
@@ -456,7 +453,6 @@ namespace ProgressionEditor
         private SerializedProperty nameProperty;
         private SerializedProperty dependenciesProperty;
         private QuestManagerAsset manager;
-        private List<string> questNames = new List<string>();
         private int[] questIndices = new int[0];
 
 
@@ -464,7 +460,6 @@ namespace ProgressionEditor
         {
             manager = AssetDatabase.LoadAssetAtPath<QuestManagerAsset>(AssetPath);
             QuestAsset[] quests = manager.GetQuests();
-            questNames = quests.Select(x => (x?x.name:"")).ToList();
             questIndices = new int[quests.Length];
             for (int i = 0; i < questIndices.Length; i++)
                 questIndices[i] = i;
