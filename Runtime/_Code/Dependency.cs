@@ -28,7 +28,8 @@ namespace Progression
         {
             if (Satisfied())
             {
-                OnSatisfied?.Invoke();
+                if(OnSatisfied != null)
+                    OnSatisfied.Invoke();
                 return true;
             }
             else

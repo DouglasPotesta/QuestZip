@@ -86,7 +86,7 @@ namespace ProgressionEditor
             if (EditorGUI.EndChangeCheck())
             {
                 questNames.Clear();
-                questNames.UnionWith(((QuestManagerAsset)serializedObject.targetObject).GetQuests().Select(x => x?.name));
+                questNames.UnionWith(((QuestManagerAsset)serializedObject.targetObject).GetQuests().Select(x => (x==null?null: x.name)));
             }
             EditorGUILayout.EndScrollView();
             if (questEditor != null && questEditor.target != null)
@@ -385,7 +385,7 @@ namespace ProgressionEditor
                 GUI.skin.textField.fontSize = original;
             }
             else
-                EditorGUI.LabelField(rect, progressionPoint?.name);
+                EditorGUI.LabelField(rect, progressionPoint?progressionPoint.name:"");
         }
 
         private string GetUniqueProgressionPointName(string newName)
@@ -464,7 +464,7 @@ namespace ProgressionEditor
         {
             manager = AssetDatabase.LoadAssetAtPath<QuestManagerAsset>(AssetPath);
             QuestAsset[] quests = manager.GetQuests();
-            questNames = quests.Select(x => x?.name).ToList();
+            questNames = quests.Select(x => (x?x.name:"")).ToList();
             questIndices = new int[quests.Length];
             for (int i = 0; i < questIndices.Length; i++)
                 questIndices[i] = i;
@@ -523,7 +523,7 @@ namespace ProgressionEditor
             for(int i =dependenciesProperty.arraySize-1; i >=0; i--)
             {
                 EditorGUILayout.BeginHorizontal();
-                EditorGUILayout.LabelField(dependenciesProperty.GetArrayElementAtIndex(i).objectReferenceValue?.name);
+                EditorGUILayout.LabelField(dependenciesProperty.GetArrayElementAtIndex(i).objectReferenceValue?dependenciesProperty.GetArrayElementAtIndex(i).objectReferenceValue.name:"");
                 if (GUILayout.Button("X"))
                 {
                     Undo.RegisterCompleteObjectUndo(target, "Remove Dependency");

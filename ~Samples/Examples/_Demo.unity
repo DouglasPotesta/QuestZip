@@ -43,7 +43,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
+  serializedVersion: 11
   m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -173,7 +173,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -253,12 +252,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d40f969c63d7b64394e80c8d01c69a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressionPoint: {fileID: 9014097476200627428, guid: ecae2ec971607344695a2af63492cc97, type: 2}
+  progressionPoint: {fileID: 9014097476200627428, guid: ecae2ec971607344695a2af63492cc97,
+    type: 2}
   OnComplete:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 621394829}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -312,8 +311,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9014097476200627428, guid: ecae2ec971607344695a2af63492cc97, type: 2}
-        m_TargetAssemblyTypeName: Progression.ProgressionPointAsset, Progression_Runtime
+      - m_Target: {fileID: 9014097476200627428, guid: ecae2ec971607344695a2af63492cc97,
+          type: 2}
         m_MethodName: Complete
         m_Mode: 1
         m_Arguments:
@@ -339,7 +338,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -444,7 +442,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: e661aa39ad85ff24895ab059934ac2ff, type: 2}
-        m_TargetAssemblyTypeName: Progression.FlagDependency, Progression_Runtime
         m_MethodName: set_Flag
         m_Mode: 6
         m_Arguments:
@@ -456,7 +453,6 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 626963095}
-        m_TargetAssemblyTypeName: 
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -482,7 +478,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -556,7 +551,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -636,7 +630,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -675,7 +668,6 @@ GameObject:
   - component: {fileID: 1157202538}
   - component: {fileID: 1157202537}
   - component: {fileID: 1157202536}
-  - component: {fileID: 1157202539}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -748,18 +740,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1157202539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1157202535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee0739777e56b1146a9249081ec1ced7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1173468980
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,12 +792,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d40f969c63d7b64394e80c8d01c69a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressionPoint: {fileID: -5291904014596109492, guid: ecae2ec971607344695a2af63492cc97, type: 2}
+  progressionPoint: {fileID: -5291904014596109492, guid: ecae2ec971607344695a2af63492cc97,
+    type: 2}
   OnComplete:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1173468984}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -871,8 +851,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -5291904014596109492, guid: ecae2ec971607344695a2af63492cc97, type: 2}
-        m_TargetAssemblyTypeName: Progression.ProgressionPointAsset, Progression_Runtime
+      - m_Target: {fileID: -5291904014596109492, guid: ecae2ec971607344695a2af63492cc97,
+          type: 2}
         m_MethodName: Complete
         m_Mode: 1
         m_Arguments:
@@ -898,7 +878,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -972,7 +951,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1202,7 +1180,6 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1245,8 +1222,6 @@ ParticleSystemRenderer:
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_AllowRoll: 1
-  m_FreeformStretching: 0
-  m_RotateWithStretchDirection: 1
   m_VertexStreams: 00010304
   m_Mesh: {fileID: 0}
   m_Mesh1: {fileID: 0}
@@ -3346,62 +3321,6 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-  LifetimeByEmitterSpeedModule:
-    enabled: 0
-    m_Curve:
-      serializedVersion: 2
-      minMaxState: 1
-      scalar: 1
-      minScalar: 1
-      maxCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: -0.8
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
-          value: 0.2
-          inSlope: -0.8
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      minCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-    m_Range: {x: 0, y: 1}
   ForceModule:
     enabled: 0
     x:
@@ -6033,12 +5952,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d40f969c63d7b64394e80c8d01c69a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  progressionPoint: {fileID: 1178599662760664758, guid: ecae2ec971607344695a2af63492cc97, type: 2}
+  progressionPoint: {fileID: 1178599662760664758, guid: ecae2ec971607344695a2af63492cc97,
+    type: 2}
   OnComplete:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1522135144}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
@@ -6092,8 +6011,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1178599662760664758, guid: ecae2ec971607344695a2af63492cc97, type: 2}
-        m_TargetAssemblyTypeName: Progression.ProgressionPointAsset, Progression_Runtime
+      - m_Target: {fileID: 1178599662760664758, guid: ecae2ec971607344695a2af63492cc97,
+          type: 2}
         m_MethodName: Complete
         m_Mode: 1
         m_Arguments:
@@ -6119,7 +6038,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

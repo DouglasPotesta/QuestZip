@@ -18,7 +18,8 @@ namespace Progression {
         /// </summary>
         public void Complete()
         {
-            progressionPoint?.Complete();
+            if(progressionPoint)
+                progressionPoint.Complete();
         }
 
         /// <summary>
@@ -27,7 +28,8 @@ namespace Progression {
         /// <param name="slot"></param>
         public void SaveToSlot(int slot)
         {
-            progressionPoint?.SaveToSlot(slot);
+            if(progressionPoint)
+                progressionPoint.SaveToSlot(slot);
         }
 
         /// <summary>
@@ -36,7 +38,8 @@ namespace Progression {
         /// <param name="slot"></param>
         public void LoadFromSlot(int slot)
         {
-            progressionPoint?.LoadFromSlot(slot);
+            if(progressionPoint)
+                progressionPoint.LoadFromSlot(slot);
         }
 
         private void OnEnable()

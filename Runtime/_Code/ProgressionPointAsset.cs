@@ -112,15 +112,10 @@ namespace Progression
         private void SatisfiedADependency()
         {
             if (AreDependenciesSatisfied())
-            {
                 if(OnCompletedThis != null)
-                {
                     if (OnCompletedThis.Invoke(this))
-                    {
-                        OnCompleted?.Invoke();
-                    }
-                }
-            }
+                        if(OnCompleted != null)
+                            OnCompleted.Invoke();
         }
     }
 }

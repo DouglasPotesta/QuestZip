@@ -47,7 +47,8 @@ namespace Progression
             circularDependencyCheck = true;
             try
             {
-                dependency?.Save();
+                if(dependency != null)
+                    dependency.Save();
             }
             finally
             {
@@ -73,7 +74,8 @@ namespace Progression
             circularDependencyCheck = true;
             try
             {
-                dependency?.Load();
+                if(dependency != null)
+                    dependency.Load();
             }
             finally
             {
